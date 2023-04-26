@@ -19,7 +19,8 @@ public class Main {
             System.out.println("8. Display all Student by rank");
             System.out.println("9. Display all Student by gender");
             System.out.println("10. Display all Student by Classroom");
-            System.out.println("11. Action with Classroom");
+            System.out.println("11. Search Student by name");
+            System.out.println("12. Action with Classroom");
             System.out.println("0. Exit");
             System.out.println("Input your choice: ");
             try {
@@ -42,18 +43,27 @@ public class Main {
                     studentManage.displayById();
                     break;
                 case 5:
+                    studentManage.displayAll();
                     break;
                 case 6:
+                    studentManage.displayByMinPoint();
                     break;
                 case 7:
+                    studentManage.displayByMaxPoint();
                     break;
                 case 8:
+                    studentManage.displayStudentByRank();
                     break;
                 case 9:
+                    studentManage.displayByGender();
                     break;
                 case 10:
+                    studentManage.displayStudentByClassroom();
                     break;
                 case 11:
+                    studentManage.searchByName();
+                    break;
+                case 12:
                     subMenu(studentManage);
                     break;
                 case 0:

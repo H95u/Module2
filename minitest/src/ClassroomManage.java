@@ -3,10 +3,11 @@ import java.util.Scanner;
 
 public class ClassroomManage implements Manage<Classroom> {
     private Scanner scanner;
-    private static final ArrayList<Classroom> classrooms = IOFile.readFileClassroom();
+    private ArrayList<Classroom> classrooms;
 
     public ClassroomManage() {
         scanner = new Scanner(System.in);
+        classrooms = IOFile.readFileClassroom();
     }
 
     @Override
@@ -46,10 +47,15 @@ public class ClassroomManage implements Manage<Classroom> {
 
     @Override
     public Classroom getById() {
-        System.out.println("Input id you want to find");
-        int id = Integer.parseInt(scanner.nextLine());
-        for (Classroom classroom : classrooms) {
-            if (classroom.getId() == id) return classroom;
+        if (classrooms.size() == 0) {
+            System.out.println("Classroom is empty ! Pls create");
+            return null;
+        } else {
+            System.out.println("Input id you want");
+            int id = Integer.parseInt(scanner.nextLine());
+            for (Classroom classroom : classrooms) {
+                if (classroom.getId() == id) return classroom;
+            }
         }
         return null;
     }

@@ -7,10 +7,10 @@ public class IOFile {
             FileWriter fileWriter = new FileWriter("D:\\hieujava\\minitest\\src\\data\\student.txt");
             BufferedWriter bufferedWriter = new BufferedWriter(fileWriter);
             for (Student student : students) {
-                bufferedWriter.write(student.toString() + "\n");
+                bufferedWriter.write(student.writeStudent() + "\n");
             }
-            fileWriter.close();
             bufferedWriter.close();
+            fileWriter.close();
         } catch (Exception e) {
             throw new RuntimeException(e);
         }
@@ -25,9 +25,16 @@ public class IOFile {
             String[] str;
             while ((c = bufferedReader.readLine()) != null) {
                 str = c.split(",");
-
-//                students.add(new Student(str[0],str[1],str[2],str[3],str[4]));
+                int id = Integer.parseInt(str[0]);
+                String name = str[1];
+                int age = Integer.parseInt(str[2]);
+                String gender = str[3];
+                Double avgPoint = Double.parseDouble(str[4]);
+                Classroom classroom = new Classroom(str[5]);
+                students.add(new Student(id, name, age, gender, avgPoint, classroom));
             }
+            bufferedReader.close();
+            fileReader.close();
         } catch (Exception e) {
             throw new RuntimeException(e);
         }
@@ -41,7 +48,8 @@ public class IOFile {
             for (Classroom classroom : classrooms) {
                 bufferedWriter.write(classroom.toString() + "\n");
             }
-
+            bufferedWriter.close();
+            fileWriter.close();
         } catch (Exception e) {
             throw new RuntimeException(e);
         }
@@ -58,6 +66,8 @@ public class IOFile {
                 str = c.split(",");
                 classrooms.add(new Classroom(Integer.parseInt(str[0]), str[1]));
             }
+            bufferedReader.close();
+            fileReader.close();
         } catch (Exception e) {
             throw new RuntimeException(e);
         }
