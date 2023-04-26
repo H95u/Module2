@@ -113,7 +113,7 @@ public class StudentManage implements Manage<Student> {
                 System.out.println(e.getMessage());
             }
         } while (age < 6 || age > 60);
-        return null;
+        return age;
     }
 
     public String getGender() {
