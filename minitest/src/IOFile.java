@@ -30,7 +30,7 @@ public class IOFile {
                 int age = Integer.parseInt(str[2]);
                 String gender = str[3];
                 Double avgPoint = Double.parseDouble(str[4]);
-                Classroom classroom = new Classroom(str[5]);
+                Classroom classroom = new Classroom(Integer.parseInt(str[5]), str[6]);
                 students.add(new Student(id, name, age, gender, avgPoint, classroom));
             }
             bufferedReader.close();

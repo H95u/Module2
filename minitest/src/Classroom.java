@@ -6,9 +6,6 @@ public class Classroom {
     public Classroom() {
     }
 
-    public Classroom(String name) {
-        this.name = name;
-    }
 
     public Classroom(int id, String name) {
         this.id = id;

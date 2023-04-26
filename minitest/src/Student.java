@@ -82,6 +82,6 @@ public class Student {
         return id + "," +
                 name + "," + age + "," +
                 gender + "," + avgPoint + "," +
-                classroom.getName();
+                classroom;
     }
 }

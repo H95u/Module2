@@ -62,7 +62,9 @@ public class ClassroomManage implements Manage<Classroom> {
 
     @Override
     public void displayAll() {
-        for (Classroom classroom : classrooms) {
+        if (classrooms.size() == 0) {
+            System.out.println("List classroom is empty !! Pls create !!");
+        } else for (Classroom classroom : classrooms) {
             System.out.println(classroom);
         }
     }
