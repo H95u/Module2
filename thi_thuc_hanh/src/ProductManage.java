@@ -167,9 +167,9 @@ public class ProductManage {
             String line;
             while ((line = bufferedReader.readLine()) != null) {
                 String[] data = line.split(",");
-                products.add(new Product(data[0], data[1],
-                        Double.parseDouble(data[2]),
-                        Integer.parseInt(data[3]), data[4]));
+                products.add(new Product(data[1], data[2],
+                        Double.parseDouble(data[3]),
+                        Integer.parseInt(data[4]), data[5]));
             }
             bufferedReader.close();
         } catch (Exception e) {
